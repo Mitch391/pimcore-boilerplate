@@ -21,7 +21,7 @@ if [[ $* == *-b* ]]; then
 fi
 
 #Installing composer packages
-docker-compose exec php bash -c "COMPOSER_MEMORY_LIMIT=-1 composer update --no-suggest --no-interaction --dev -vvv"
+docker-compose exec php bash -c "COMPOSER_MEMORY_LIMIT=-1 composer install --no-suggest --no-interaction --dev -vvv"
 
 #Installing pimcore
 docker-compose exec php bash -c "vendor/bin/pimcore-install --env=dev --ignore-existing-config --no-interaction -vvv"
